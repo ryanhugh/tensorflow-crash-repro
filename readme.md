@@ -7,7 +7,11 @@ yarn
 npm run start
 ```
 
-And the output will look like:
+And the output will look like this:
+
+Note, this is only happening for me on Ubuntu (Linux hostname 5.19.0-41-generic #42~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Apr 18 17:40:00 UTC 2 x86_64 x86_64 x86_64 GNU/Linux)
+
+This does not crash on Mac OSX M2 (arm). 
 
 
 ```
