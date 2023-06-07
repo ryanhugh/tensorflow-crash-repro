@@ -1,20 +1,23 @@
-import fs from 'fs'
+let fs = require('fs') 
 const tf = require('@tensorflow/tfjs-node');
-import _ from 'lodash';
-import sharp from 'sharp';
+let _ = require('lodash')
+let sharp = require('sharp')
 
-import * as faceapi from '@vladmandic/face-api';
-import tracer from "dd-trace";
+let faceapi = require('@vladmandic/face-api')
 
-import { FaceDetection } from '@vladmandic/face-api';
-import imghash from 'imghash';
-import * as  nsfw from 'nsfwjs';
-import exif from 'exif';
-import Tesseract from 'tesseract.js';
-import { Pool } from 'pg'
-import { QueryLike } from 'sql';
+let tracer = require('dd-trace')
 
-import path from 'path';
+let FaceDetection = faceapi.FaceDetection
+
+let imghash = require('imghash')
+
+let nsfw = require('nsfwjs')
+let exif = require('exif')
+let path = require('path')
+let Tesseract = require('tesseract.js')
+require('pg')
+require('sql')
+
 
 tracer.init({
   profiling: true,
@@ -23,7 +26,7 @@ tracer.init({
 
 
 // Convert a Node.js Buffer of an image to a TF Tensor object. I copied this code off the internet. 
-export function bufferToTensor(buffer) {
+function bufferToTensor(buffer) {
   const tensor = tf.tidy(() => {
     const decode = tf.node.decodeImage(buffer, 3);
     let expand;
