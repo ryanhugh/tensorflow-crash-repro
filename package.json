@@ -1,0 +1,21 @@
+{
+  "name": "tensorflow-crash-repro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ryanhugh/tensorflow-crash-repro.git",
+  "author": "Ryan Hughes <ryanhughes624@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^4.7.0",
+    "@vladmandic/face-api": "^1.7.11",
+    "dd-trace": "^4.1.0",
+    "exif": "^0.6.0",
+    "imghash": "^0.0.9",
+    "lodash": "^4.17.21",
+    "nsfwjs": "^2.4.2",
+    "pg": "^8.11.0",
+    "sharp": "^0.32.1",
+    "sql": "^0.78.0",
+    "tesseract.js": "^4.1.0"
+  }
+}
