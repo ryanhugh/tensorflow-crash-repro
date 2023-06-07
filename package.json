@@ -5,6 +5,9 @@
   "repository": "git@github.com:ryanhugh/tensorflow-crash-repro.git",
   "author": "Ryan Hughes <ryanhughes624@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "gdb -ex run --args node index.js"
+  },
   "dependencies": {
     "@tensorflow/tfjs-node": "^4.7.0",
     "@vladmandic/face-api": "^1.7.11",
