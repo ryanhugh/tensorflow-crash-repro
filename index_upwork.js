@@ -105,6 +105,47 @@ async function runOnce(buffer, model) {
   //await tf.nextFrame()
 
 }
+
+
+
+async function runOnceParallel(buffer, model) {
+  // await tf.setBackend('tensorflow');
+  // console.log("TF backend:", tf.getBackend());
+
+  console.log('running all at once')
+  await Promise.all([
+    processWithSharp(buffer),
+    nsfwDetection(buffer, model),
+    peopleDetection(buffer),
+    imghash.hash(buffer, 8, 'binary'),
+    Tesseract.recognize(buffer),
+    getExif(buffer)
+
+  ])
+
+  // await ;
+  // console.log("got width and height", tf.memory());
+
+  // await ;
+  // console.log('ran nsfw', tf.memory());
+
+  // await ;
+  // console.log('ran people', tf.memory());
+
+  // await 
+  // console.log('ran hash', tf.memory())
+
+  // await ;
+  // console.log('ran ocr', tf.memory())
+
+  // await ;
+  // console.log('ran exif ', tf.memory())
+
+}
+
+
+
+
 let CWD = process.env.MY_CWD || process.cwd() ;
 
 
