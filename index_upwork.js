@@ -109,8 +109,8 @@ async function runOnce(buffer, model) {
 
 
 async function runOnceParallel(buffer, model) {
-  // await tf.setBackend('tensorflow');
-  // console.log("TF backend:", tf.getBackend());
+  await tf.setBackend('tensorflow');
+  console.log("TF backend:", tf.getBackend());
 
   console.log('running all at once')
   await Promise.all([
@@ -122,25 +122,6 @@ async function runOnceParallel(buffer, model) {
     getExif(buffer)
 
   ])
-
-  // await ;
-  // console.log("got width and height", tf.memory());
-
-  // await ;
-  // console.log('ran nsfw', tf.memory());
-
-  // await ;
-  // console.log('ran people', tf.memory());
-
-  // await 
-  // console.log('ran hash', tf.memory())
-
-  // await ;
-  // console.log('ran ocr', tf.memory())
-
-  // await ;
-  // console.log('ran exif ', tf.memory())
-
 }
 
 
@@ -156,7 +137,7 @@ async function main() {
 
   let i = 0;
   while (true) {
-    await runOnce(buffer, model);
+    await runOnceParallel(buffer, model);
     i += 1;
     console.log("ran", i, "times");
     if (i === 100) {
