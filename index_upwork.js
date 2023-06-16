@@ -137,7 +137,9 @@ async function main() {
 
   let i = 0;
   while (true) {
-    await runOnceParallel(buffer, model);
+    await Promise.all([runOnceParallel(buffer, model), runOnceParallel(buffer, model), runOnceParallel(buffer, model)]);
+    // await runOnceParallel(buffer, model);
+    // await runOnceParallel(buffer, model);
     i += 1;
     console.log("ran", i, "times");
     if (i === 100) {
