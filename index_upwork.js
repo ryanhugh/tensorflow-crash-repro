@@ -104,7 +104,7 @@ async function runOnce(buffer, model) {
 
   //await tf.nextFrame()
 
-
+}
 let CWD = process.env.MY_CWD || process.cwd() ;
 
 
