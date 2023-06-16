@@ -106,7 +106,7 @@ async function runOnce(buffer, model) {
 
 
 let CWD = process.env.MY_CWD || process.cwd() ;
-}
+
 
 async function main() {
   const buffer = fs.readFileSync(CWD + '/crashy.jpeg', { encoding: null });
