@@ -104,12 +104,14 @@ async function runOnce(buffer, model) {
 
   //await tf.nextFrame()
 
+
+let CWD = process.env.MY_CWD || process.cwd() ;
 }
 
 async function main() {
-  const buffer = fs.readFileSync('/usr/src/app/crashy.jpeg', { encoding: null });
+  const buffer = fs.readFileSync(CWD + '/crashy.jpeg', { encoding: null });
   const model = await loadNsfwModel();
-  await faceapi.nets.ssdMobilenetv1.loadFromDisk(path.join('/usr/src/app/faceDetectionModel'))
+  await faceapi.nets.ssdMobilenetv1.loadFromDisk(path.join(CWD + '/faceDetectionModel'))
 
   let i = 0;
   while (true) {
